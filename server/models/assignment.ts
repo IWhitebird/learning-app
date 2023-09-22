@@ -10,7 +10,12 @@ export const assignmentSchema = new mongoose.Schema<IAssignment>({
         type: String,
         required: true,
     },
-
+    instructions: [
+        {
+            type: String,
+            required: false,
+        }
+    ],
     questions: [ {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Question",

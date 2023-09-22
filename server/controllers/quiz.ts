@@ -114,7 +114,6 @@ export const createAssignment = async (req: Request, res: Response) => {
             description,
         } = req.body;
 
-
         if(!name || !description){
             return res.status(400).json({success : false , error: 'Please enter all fields' });
         }
@@ -122,6 +121,7 @@ export const createAssignment = async (req: Request, res: Response) => {
         const assignment = await Assignment.create({
             name,
             description,
+            instructions: req.body?.instructions || null,
         });
 
         const updatedQuiz = await Quiz.findByIdAndUpdate(

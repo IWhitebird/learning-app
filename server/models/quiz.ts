@@ -10,6 +10,10 @@ const quizSchema = new mongoose.Schema<IQuiz>({
         type: String,
         required: true,
     },
+    image:{
+        type: String,
+        required: true,
+    },
     assignment: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Assignment",

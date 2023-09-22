@@ -29,6 +29,7 @@ export interface IProgress extends mongoose.Document{
 export interface IAssignment extends mongoose.Document{
     name: string;
     description: string;
+    instructions: string[];
     questions: IQuestion[] | any[];
     maxscore : number;
 }
@@ -45,6 +46,7 @@ export interface IQuiz extends mongoose.Document{
     name: string;
     description: string;
     assignment: IAssignment[];
+    image: string;
     leaderboard:[mongoose.Schema.Types.ObjectId];
     createdBy: mongoose.Schema.Types.ObjectId;
     createdAt: Date;
